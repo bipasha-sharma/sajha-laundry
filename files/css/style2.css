@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  body{
+    background-color:#6cd3e3 ;
+    text-align: center;
+  }
+  .logo{
+    width: 90px;
+    height: 90px;
+    display:inline;
+   
+  }
+  h1 {
+    color: #02082c;
+  
+  }
+  h2{
+    display: flex; 
+    align-items: center;
+  }
+  
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
+  
+  .header {
+    
+    width: 100%;
+    background-color: white;
+    color: #6cd3e3;
+    /* flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+  }
+  
+  .header ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .header ul li {
+    /* TOP/BOTTOM LEFT/RIGHT */
+    margin: 0 10px;
+  }
+  
+  .header ul li a {
+    text-decoration: none;
+    color: #6cd3e3;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .sajha {
+    padding-top: 30px;
+    /* background-color: #18ccecc0; */
+    background-image: url(bubbles.jpg);
+  }
+  
+  .sajha .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .sajha-desc {
+    width: 40%;
+  }
+  .sajha-desc > * {
+    color: #02082c;
+  }
+  .sajha-desc h1 {
+    font-size: 38px;
+  }
+  .sajha-desc p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .sajha-desc a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #02082c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+  }
+  .how-it-works {
+    background-color: #6cd3e3;
+    padding-bottom: 50px;
+    margin-top: 50px;
+  }
+  .how-it-works .container {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  .how-it-works a {
+    text-decoration: none;
+    color: white;
+    background-color: #02082c;
+    padding: 10px 20px;
+    border-radius: 3px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0;
+  }
+  .card {
+    background-color: #02082c;
+    color: white;
+    padding: 40px 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    
+  }
+  
+  .card h1 {
+    color: white;
+  }
+  
+  .card i {
+    font-size: 45px;
+    text-align: center;
+  }
+  
+  .card > * {
+    margin: 5px 0;
+  }
+  
+  .main-spacing {
+    /* Top/bottom ---- Left/Right */
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .why h1,
+  .why p {
+    text-align: center;
+  }
+  .row-spacing {
+    width: 65%;
+    margin: 0 auto;
+  }
+  
+  .contact {
+    color: rgb(255, 253, 253);
+    background-color: #6cd3e3;
+  }
+  .contact h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+  .contact form {
+    width: 40%;
+    /* center a div */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    /* border-width border-type border-color */
+    border: 2px solid white;
+    padding: 40px;
+    border-radius: 15px;
+  }
+  
+  
+  
+  
+  .user{
+    width: 18px;
+    height: 18px;
+    display:inline;
+  }
+  .pass{
+    width: 25px;
+    height: 25px;
+    display:inline;
+  }
+  fieldset {
+    border: none; 
+  }
+
+  .column{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.input-wrapper-0 {
+  position: relative;
+  margin: 2em auto;
+  width: calc(50% - 10px);
+  
+}
+  .input-wrapper {
+    position: relative;
+    margin: 2em auto;
+    width: calc(25% - 10px);
+    
+  }
+  .input:active, input:focus{
+    border-bottom: 2px solid#ffffff;
+    border-color:2px solid #ffffff;
+  }
+  label{
+    font-family: "Segoe UI bold", sans-serif;
+    font-size: 20px;
+  }
+  input{
+        width: 95%;
+        line-height: 2;
+        background-color: transparent;
+        padding: .5em .5em;
+        border-color: #ffffff;   
+      }
+   
+  
+  .submit {
+    outline: 0;
+    font-size: 10px bold;
+    letter-spacing: 0.1em;
+    background-color: #02082c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+    margin: 4em auto;
+    margin-top: 2em;
+    display: block;
+    
+    
+  }
+  .error{
+    color: #f11621;
+    text-align:center;
+    align-items: center;
+    position: relative;
+  }
+  
+  
+  .submit:hover {
+     background-color: #f11621;
+    }
+  
+  footer {
+    background-color: #02082c;
+    color: white;
+    height: 100px;
+  }
+  
+  footer p {
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  
