@@ -8,6 +8,18 @@
     background-color:#6cd3e3 ;
     text-align: center;
   }
+  .btnadd{
+    display: block;
+    /* float: right;
+    margin-right: 100px; */
+
+  }
+  .how-it-works .container {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+  }
 .header {
   
     width: 100%;
@@ -59,6 +71,7 @@
 
 .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
+    
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -157,6 +170,7 @@
     margin: 4em auto;
     margin-top: 2em;
     display: block;
+    
     
     
   }

@@ -24,11 +24,11 @@
     <!-- Navigation is mostly unorder list -->
 
     <ul>
-        <li><a href="dashboard.php">Dashboard</a></li> 
+      <li><a href="dashboard.php">Dashboard</a></li> 
       <li><a href="customerdetails.php">Customer Details</a></li>
+      <li><a href="products.php">Products</a></li>
       <li><a href="#">Order Details</a></li>
       <li><a href="#">Payment Details</a></li>
-      <li><a href="addproduct.php">Add Products</a></li>
       <li><a href="adminlogout.php">Log out</a></li>
     </ul>
   </div>

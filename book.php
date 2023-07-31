@@ -32,10 +32,10 @@ if (isset($_POST['submit'])) {
   while ($row = mysqli_fetch_assoc($result_query)) {
     $item_id = $row['item_id'];
     $item_name = $row['item_name'];
-  $quantity=$_POST[$item_name];
-  if (empty($quantity)) {
-    $quantity=0;
-  }
+    $quantity=$_POST[$item_name];
+    if (empty($quantity)) {
+      $quantity=0;
+    }
  
   else {
     if($quantity<0){
@@ -44,15 +44,13 @@ if (isset($_POST['submit'])) {
   }
 }
 if ($quantity >= 0) {
-    global $order_id;
-    $stmt2 = $conn->prepare("INSERT INTO item_orders (item_id,order_id,quantity_ordered) VALUES(?,?,?)");
-    $stmt2->bind_param("iii", $item_id, $order_id, $quantity);
-    $stmt2->execute();
-    
-    $stmt2->close();
-}
+  $stmt2 = $conn->prepare("INSERT INTO item_orders (item_id, order_id, quantity_ordered) VALUES (?, ?, ?)");
+  $stmt2->bind_param("iii", $item_id, $order_id, $quantity);
+  $stmt2->execute();
+  $stmt2->close();
 }
 
+}
 }
 ?>
 <!DOCTYPE html>
@@ -175,4 +173,4 @@ if ($quantity >= 0) {
 
 </body>
 
-</html> 
+</html>
