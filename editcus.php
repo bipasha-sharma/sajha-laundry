@@ -43,61 +43,74 @@ session_start();
         <br>
         <!-- client details DISPLAY FORM -->
 
-        <?php 
+<?php 
+$id=$_GET['id'];
 
-        $a = $_SESSION["customer_username"];
-        $conn=mysqli_connect('localhost','root','','sixthsem');
-        $sql="SELECT * FROM customer where customer_username = '$a'";
-        $res = mysqli_query($conn, $sql);
-        $data = [];
-        if (mysqli_num_rows($res)> 0){
-        while ($row = mysqli_fetch_assoc($res)){
-          array_unshift($data, $row);
-        }
-        }
-        ?>
+$conn=mysqli_connect('localhost','root','','sixthsem');
 
+$sql1="select * from customer where customer_id=$id";
+$res=mysqli_query($conn,$sql1);
+$data=mysqli_fetch_assoc($res);
+if(isset($_POST['submit'])){
+$customer_fullname=$_POST['customer_fullname'];
+$customer_username=$_POST['customer_username'];
+$customer_email=$_POST['customer_email'];
+$customer_address=$_POST['customer_address'];
+$customer_contact=$_POST['customer_contact'];
 
-          <table border="1" class="content-table">
-            <?php 
-            foreach($data as $d) {
-              ?>
+$sql="UPDATE customer set customer_fullname='$customer_fullname',customer_username='$customer_username',customer_email='$customer_email',customer_address='$customer_address',customer_contact='$customer_contact' where customer_id='$id'";
+mysqli_query($conn,$sql);
+if(mysqli_affected_rows($conn)==1){
+	header('location:customer.php');
+}
+else{
+	echo "data update failed".mysqli_error($conn);
+}
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>edit form from database 10</title>
+</head>
+<body>
+	<form method="post">
+
+    <table border="1" class="content-table">
             <thead>
-              <tr>
-                    <th>Customer id</th>
-                    <td><?php echo $d['customer_id']; ?></td>
-                    </tr>
                     <tr>
                     <th>Full name</th>
-                    <td><?php echo $d['customer_fullname']; ?></td>
+                    <td><input type="text" name="customer_fullname" value="<?php echo $data['customer_fullname'];?>"></td>
                     </tr>
                     <tr>
                     <th>Username</th>
-                    <td><?php echo $d['customer_username']; ?></td>
+                    <td><input type="text" name="customer_username" value="<?php echo $data['customer_username'];?>"></td>
                     </tr>
                     <tr>
                     <th>Email</th>
-                    <td><?php echo $d['customer_email']; ?></td>
+                    <td><input type="text" name="customer_email" value="<?php echo $data['customer_email'];?>"></td>
                     </tr>
                     <tr>
                     <th>Address</th>
-                    <td><?php echo $d['customer_address']; ?></td>
+                    <td><input type="text" name="customer_address" value="<?php echo $data['customer_address'];?>"></td>
                     </tr>
                     <tr>
                     <th>Contact</th>
-                    <td><?php echo $d['customer_contact']; ?></td>
+                    <td><input type="number" name="customer_contact" value="<?php echo $data['customer_contact'];?>"></td>
                     </tr>
-                    <tr>
-                    <th>Action</th>
-                    <td><a href="editcus.php?id=<?php echo $d['customer_id'] ?>">Edit Details</a></td>
-                    </tr>
-                    
                     
             </thead>
-                <?php } ?>
+                
           </table>
+          <input type="submit" value="Update" name="submit" class="submit">
+                    
+		
+	</form>
+</body>
+</html>
 
-      </div>
+</div>
     </div>
     
     <footer class="footer">

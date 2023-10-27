@@ -54,7 +54,7 @@ session_start();
 
     <?php
     include 'dbconn.php';
-    $stmt = $conn->prepare("SELECT * FROM CUSTOMER");
+    $stmt = $conn->prepare("SELECT * FROM payment");
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -71,18 +71,17 @@ session_start();
         <table class="content-table" id="table_data">
           <thead>
             <tr>
-              <th>Customer ID</th>
+              <th>Payment ID</th>
 
-              <th>Full name</th>
+              <th>Amount</th>
 
-              <th>Username</th>
+              <th>Payment Date</th>
 
-              <th>Email</th>
+              <th>Payment Mode</th>
 
-              <th>Address</th>
+              <th>Order Id</th>
 
-              <th>Contact</th>
-
+             
              
 
             </tr>
@@ -94,12 +93,11 @@ session_start();
           ?>
             <tbody>
               <tr>
-                <td><?= $row['customer_id']; ?></td>
-                <td><?= $row['customer_fullname']; ?></td>
-                <td><?= $row['customer_username']; ?></td>
-                <td><?= $row['customer_email']; ?></td>
-                <td><?= $row['customer_address']; ?></td>
-                <td><?= $row['customer_contact']; ?></td>
+                <td><?= $row['payment_id']; ?></td>
+                <td><?= $row['amount']; ?></td>
+                <td><?= $row['payment_date']; ?></td>
+                <td><?= $row['payment_mode']; ?></td>
+                <td><?= $row['order_id']; ?></td>
               </tr>
             <?php } ?>
             </tbody>
@@ -110,25 +108,7 @@ session_start();
   <?php
   } else echo "<h1> Please login first </h1> ";
   ?>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    var jq = $.noConflict();
-    jq(document).ready(function() {
-      jq("#search_text").keyup(function() {
-        var search = jq(this).val();
-        jq.ajax({
-          url: "action.php",
-          method: "POST",
-          data: {
-            query: search
-          },
-          success: function(response) {
-            jq("#table_data").html(response);
-          }
-        });
-      });
-    });
-  </script>
+ 
 </body>
 
 </html>

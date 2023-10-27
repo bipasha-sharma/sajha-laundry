@@ -21,7 +21,9 @@ if (isset($_POST['submit'])) {
     $stmt->execute();
     $order_id = mysqli_insert_id($conn);
     echo '<script> alert("order successful !") </script>';
+
     $stmt->close();
+    header("Location: payment.php?id=$order_id");
 
 
   
@@ -49,6 +51,9 @@ if ($quantity >= 0) {
   $stmt2->execute();
   $stmt2->close();
 }
+
+	
+
 
 }
 }
@@ -79,8 +84,8 @@ if ($quantity >= 0) {
       <li><a href="customer.php"><?php if ($_SESSION['customer_username']) {
                         echo $_SESSION['customer_username'];
                       } ?> </a></li>
-      <li><a href="#">Book Now</a></li>
-      <li><a href="#">Payment</a></li>
+      <li><a href="book.php">Book Now</a></li>
+      <li><a href="payment.php">Payment</a></li>
       <li><a href="logout.php">Log out</a></li>
     </ul>
   </div>
@@ -158,8 +163,8 @@ if ($quantity >= 0) {
             ?>
             
     
-
-            <input type="submit" value="book" name="submit" class="submit">
+            
+            <input type="submit" value="book" name="submit" class="submit"  >
           </div>
 
         </fieldset>

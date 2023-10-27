@@ -46,8 +46,9 @@ session_start();
         <?php 
 
         $a = $_SESSION["customer_username"];
+        $b= $_SESSION["customer_id"];
         $conn=mysqli_connect('localhost','root','','sixthsem');
-        $sql="SELECT * FROM customer where customer_username = '$a'";
+        $sql="SELECT * FROM orders where customer_id = '$b'";
         $res = mysqli_query($conn, $sql);
         $data = [];
         if (mysqli_num_rows($res)> 0){
@@ -59,41 +60,36 @@ session_start();
 
 
           <table border="1" class="content-table">
+          <thead>
+                    <tr>
+                    <th>Customer id</th>
+                    <th>order_id</th>
+                    <th>order_date</th>
+                    <th>pickup date</th>
+                    <th>drop off time</th>
+                    <th>order_status</th>
+                    <th>service type</th>
+                    <th>Action </th>
+                    </tr>
+            </thead>
             <?php 
             foreach($data as $d) {
               ?>
-            <thead>
-              <tr>
-                    <th>Customer id</th>
+            
+            <tbody>
+                    <tr>
                     <td><?php echo $d['customer_id']; ?></td>
+                    <td><?php echo $d['order_id']; ?></td>
+                    <td><?php echo $d['order_date']; ?></td>
+                    <td><?php echo $d['pickup_date']; ?></td>
+                    <td><?php echo $d['dropoff_time']; ?></td>
+                    <td><?php echo $d['order_status']; ?></td>
+                    <td><?php echo $d['service_type']; ?></td>
+                    <td><a href="cusorderdetail.php?id=<?php echo $d['order_id'] ?>">Details</a></td>
                     </tr>
-                    <tr>
-                    <th>Full name</th>
-                    <td><?php echo $d['customer_fullname']; ?></td>
-                    </tr>
-                    <tr>
-                    <th>Username</th>
-                    <td><?php echo $d['customer_username']; ?></td>
-                    </tr>
-                    <tr>
-                    <th>Email</th>
-                    <td><?php echo $d['customer_email']; ?></td>
-                    </tr>
-                    <tr>
-                    <th>Address</th>
-                    <td><?php echo $d['customer_address']; ?></td>
-                    </tr>
-                    <tr>
-                    <th>Contact</th>
-                    <td><?php echo $d['customer_contact']; ?></td>
-                    </tr>
-                    <tr>
-                    <th>Action</th>
-                    <td><a href="editcus.php?id=<?php echo $d['customer_id'] ?>">Edit Details</a></td>
-                    </tr>
+            </tbody>
                     
-                    
-            </thead>
+            
                 <?php } ?>
           </table>
 

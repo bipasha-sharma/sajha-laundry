@@ -81,7 +81,26 @@
     font-size: 18px;
     margin: 10px 0;
   }
+  .content-table{
+    padding: 12px 15px;
+text-align: center;
+  }
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
   
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #02082c;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #02082c;
+  }
   .sajha-desc a {
     display: inline-block;
     text-decoration: none;

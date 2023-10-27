@@ -24,21 +24,17 @@ session_start();
     <!-- Navigation is mostly unorder list -->
 
     <ul>
-      <li><a href="dashboard.php">Dashboard</a></li>
+      
       <li><a href="customerdetails.php">Customer Details</a></li>
       <li><a href="products.php">Products</a></li>
-      <li><a href="#">Order Details</a></li>
-      <li><a href="#">Payment Details</a></li>
+      <li><a href="orderdetails.php">Order Details</a></li>
+      <li><a href="paymentdetails.php">Payment Details</a></li>
       <li><a href="adminlogout.php">Log out</a></li>
     </ul>
   </div>
   <?php
   if ($_SESSION['admin_username']) {
   ?>
-
-
-
-
     <?php
     // $conn = mysqli_connect('localhost', 'root', '', 'sixthsem');
     include 'dbconn.php';

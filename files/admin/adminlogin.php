@@ -25,7 +25,7 @@ if(isset($_POST['login'])){
 
 }
 if(isset($_SESSION['admin_username'])){
-	header("location:dashboard.php");
+	header("location:customerdetails.php");
 }
 ?>
 

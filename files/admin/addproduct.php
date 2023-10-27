@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
             <li><a href="dashboard.php">Dashboard</a></li> 
             <li><a href="customerdetails.php">Customer Details</a></li>
             <li><a href="products.php">Products</a></li>
-            <li><a href="#">Order Details</a></li>
+            <li><a href="orderdetails.php">Order Details</a></li>
             <li><a href="#">Payment Details</a></li>
             <li><a href="adminlogout.php">Log out</a></li>
         </ul>
